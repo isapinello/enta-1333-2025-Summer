@@ -52,7 +52,10 @@ public class GridManager : MonoBehaviour
             }
         }
     }
-
+    public GridNode[,] GetGrid()
+    {
+        return gridNodes;
+    }
     private void OnDrawGizmos()
     {
         if (gridNodes == null || gridSettings == null) return;

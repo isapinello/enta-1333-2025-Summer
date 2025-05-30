@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEditor.PackageManager.Requests;
 using UnityEngine;
 [ExecuteInEditMode]
-public class PathFinding : MonoBehaviour
+public class DFS : MonoBehaviour
 {
     [SerializeField] private GridManager gridManager;
 
@@ -32,6 +32,7 @@ public class PathFinding : MonoBehaviour
 
         finalPath = DepthFirstSearch(start, end); //stores the result to be drawn.
     }
+
     void BuildGridReference()
     {
         int width = gridManager.GridSettings.GridSizeX;
