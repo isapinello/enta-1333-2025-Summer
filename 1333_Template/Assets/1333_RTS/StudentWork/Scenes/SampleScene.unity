@@ -450,7 +450,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1016106455}
-  - component: {fileID: 1016106456}
+  - component: {fileID: 1016106457}
   m_Layer: 0
   m_Name: Pathfinder
   m_TagString: Untagged
@@ -473,7 +473,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1016106456
+--- !u!114 &1016106457
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -482,7 +482,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1016106454}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48f5964fbf744f140b04423434cff595, type: 3}
+  m_Script: {fileID: 11500000, guid: ce0aa5253d1ef944cb7e380271870ce2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   gridManager: {fileID: 1995583409}
@@ -5348,6 +5348,1006 @@ MonoBehaviour:
     walkable: 1
     Weight: 1
     terrainType: {fileID: 11400000, guid: 7f2f0a062bff8fe49a87aefcc9dd948c, type: 2}
+  - Name: Default_0_0
+    WorldPosition: {x: 0, y: 0, z: 0}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 7f2f0a062bff8fe49a87aefcc9dd948c, type: 2}
+  - Name: Default_0_1
+    WorldPosition: {x: 0, y: 0, z: 1}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: a067ff6d22a0fa24b9c5567cfae19a7d, type: 2}
+  - Name: Default_0_2
+    WorldPosition: {x: 0, y: 0, z: 2}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 7f2f0a062bff8fe49a87aefcc9dd948c, type: 2}
+  - Name: Default_0_3
+    WorldPosition: {x: 0, y: 0, z: 3}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 7f2f0a062bff8fe49a87aefcc9dd948c, type: 2}
+  - Name: Default_0_4
+    WorldPosition: {x: 0, y: 0, z: 4}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 7f2f0a062bff8fe49a87aefcc9dd948c, type: 2}
+  - Name: Default_0_5
+    WorldPosition: {x: 0, y: 0, z: 5}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 96f54dca82ca0dd40b7e4d935c321bee, type: 2}
+  - Name: Default_0_6
+    WorldPosition: {x: 0, y: 0, z: 6}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 7f2f0a062bff8fe49a87aefcc9dd948c, type: 2}
+  - Name: Default_0_7
+    WorldPosition: {x: 0, y: 0, z: 7}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 96f54dca82ca0dd40b7e4d935c321bee, type: 2}
+  - Name: Default_0_8
+    WorldPosition: {x: 0, y: 0, z: 8}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: a067ff6d22a0fa24b9c5567cfae19a7d, type: 2}
+  - Name: Default_0_9
+    WorldPosition: {x: 0, y: 0, z: 9}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: a067ff6d22a0fa24b9c5567cfae19a7d, type: 2}
+  - Name: Default_1_0
+    WorldPosition: {x: 1, y: 0, z: 0}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: a067ff6d22a0fa24b9c5567cfae19a7d, type: 2}
+  - Name: Default_1_1
+    WorldPosition: {x: 1, y: 0, z: 1}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 96f54dca82ca0dd40b7e4d935c321bee, type: 2}
+  - Name: Default_1_2
+    WorldPosition: {x: 1, y: 0, z: 2}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: a067ff6d22a0fa24b9c5567cfae19a7d, type: 2}
+  - Name: Default_1_3
+    WorldPosition: {x: 1, y: 0, z: 3}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 7f2f0a062bff8fe49a87aefcc9dd948c, type: 2}
+  - Name: Default_1_4
+    WorldPosition: {x: 1, y: 0, z: 4}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 7f2f0a062bff8fe49a87aefcc9dd948c, type: 2}
+  - Name: Default_1_5
+    WorldPosition: {x: 1, y: 0, z: 5}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 96f54dca82ca0dd40b7e4d935c321bee, type: 2}
+  - Name: Default_1_6
+    WorldPosition: {x: 1, y: 0, z: 6}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 96f54dca82ca0dd40b7e4d935c321bee, type: 2}
+  - Name: Default_1_7
+    WorldPosition: {x: 1, y: 0, z: 7}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: a067ff6d22a0fa24b9c5567cfae19a7d, type: 2}
+  - Name: Default_1_8
+    WorldPosition: {x: 1, y: 0, z: 8}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 96f54dca82ca0dd40b7e4d935c321bee, type: 2}
+  - Name: Default_1_9
+    WorldPosition: {x: 1, y: 0, z: 9}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 7f2f0a062bff8fe49a87aefcc9dd948c, type: 2}
+  - Name: Default_2_0
+    WorldPosition: {x: 2, y: 0, z: 0}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 96f54dca82ca0dd40b7e4d935c321bee, type: 2}
+  - Name: Default_2_1
+    WorldPosition: {x: 2, y: 0, z: 1}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 7f2f0a062bff8fe49a87aefcc9dd948c, type: 2}
+  - Name: Default_2_2
+    WorldPosition: {x: 2, y: 0, z: 2}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 7f2f0a062bff8fe49a87aefcc9dd948c, type: 2}
+  - Name: Default_2_3
+    WorldPosition: {x: 2, y: 0, z: 3}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 7f2f0a062bff8fe49a87aefcc9dd948c, type: 2}
+  - Name: Default_2_4
+    WorldPosition: {x: 2, y: 0, z: 4}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 7f2f0a062bff8fe49a87aefcc9dd948c, type: 2}
+  - Name: Default_2_5
+    WorldPosition: {x: 2, y: 0, z: 5}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: a067ff6d22a0fa24b9c5567cfae19a7d, type: 2}
+  - Name: Default_2_6
+    WorldPosition: {x: 2, y: 0, z: 6}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 96f54dca82ca0dd40b7e4d935c321bee, type: 2}
+  - Name: Default_2_7
+    WorldPosition: {x: 2, y: 0, z: 7}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: a067ff6d22a0fa24b9c5567cfae19a7d, type: 2}
+  - Name: Default_2_8
+    WorldPosition: {x: 2, y: 0, z: 8}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 7f2f0a062bff8fe49a87aefcc9dd948c, type: 2}
+  - Name: Default_2_9
+    WorldPosition: {x: 2, y: 0, z: 9}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 96f54dca82ca0dd40b7e4d935c321bee, type: 2}
+  - Name: Default_3_0
+    WorldPosition: {x: 3, y: 0, z: 0}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 96f54dca82ca0dd40b7e4d935c321bee, type: 2}
+  - Name: Default_3_1
+    WorldPosition: {x: 3, y: 0, z: 1}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: a067ff6d22a0fa24b9c5567cfae19a7d, type: 2}
+  - Name: Default_3_2
+    WorldPosition: {x: 3, y: 0, z: 2}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: a067ff6d22a0fa24b9c5567cfae19a7d, type: 2}
+  - Name: Default_3_3
+    WorldPosition: {x: 3, y: 0, z: 3}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 96f54dca82ca0dd40b7e4d935c321bee, type: 2}
+  - Name: Default_3_4
+    WorldPosition: {x: 3, y: 0, z: 4}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 7f2f0a062bff8fe49a87aefcc9dd948c, type: 2}
+  - Name: Default_3_5
+    WorldPosition: {x: 3, y: 0, z: 5}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 96f54dca82ca0dd40b7e4d935c321bee, type: 2}
+  - Name: Default_3_6
+    WorldPosition: {x: 3, y: 0, z: 6}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 96f54dca82ca0dd40b7e4d935c321bee, type: 2}
+  - Name: Default_3_7
+    WorldPosition: {x: 3, y: 0, z: 7}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: a067ff6d22a0fa24b9c5567cfae19a7d, type: 2}
+  - Name: Default_3_8
+    WorldPosition: {x: 3, y: 0, z: 8}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: a067ff6d22a0fa24b9c5567cfae19a7d, type: 2}
+  - Name: Default_3_9
+    WorldPosition: {x: 3, y: 0, z: 9}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: a067ff6d22a0fa24b9c5567cfae19a7d, type: 2}
+  - Name: Default_4_0
+    WorldPosition: {x: 4, y: 0, z: 0}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: a067ff6d22a0fa24b9c5567cfae19a7d, type: 2}
+  - Name: Default_4_1
+    WorldPosition: {x: 4, y: 0, z: 1}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 96f54dca82ca0dd40b7e4d935c321bee, type: 2}
+  - Name: Default_4_2
+    WorldPosition: {x: 4, y: 0, z: 2}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: a067ff6d22a0fa24b9c5567cfae19a7d, type: 2}
+  - Name: Default_4_3
+    WorldPosition: {x: 4, y: 0, z: 3}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: a067ff6d22a0fa24b9c5567cfae19a7d, type: 2}
+  - Name: Default_4_4
+    WorldPosition: {x: 4, y: 0, z: 4}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 96f54dca82ca0dd40b7e4d935c321bee, type: 2}
+  - Name: Default_4_5
+    WorldPosition: {x: 4, y: 0, z: 5}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: a067ff6d22a0fa24b9c5567cfae19a7d, type: 2}
+  - Name: Default_4_6
+    WorldPosition: {x: 4, y: 0, z: 6}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 96f54dca82ca0dd40b7e4d935c321bee, type: 2}
+  - Name: Default_4_7
+    WorldPosition: {x: 4, y: 0, z: 7}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: a067ff6d22a0fa24b9c5567cfae19a7d, type: 2}
+  - Name: Default_4_8
+    WorldPosition: {x: 4, y: 0, z: 8}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: a067ff6d22a0fa24b9c5567cfae19a7d, type: 2}
+  - Name: Default_4_9
+    WorldPosition: {x: 4, y: 0, z: 9}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: a067ff6d22a0fa24b9c5567cfae19a7d, type: 2}
+  - Name: Default_5_0
+    WorldPosition: {x: 5, y: 0, z: 0}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 7f2f0a062bff8fe49a87aefcc9dd948c, type: 2}
+  - Name: Default_5_1
+    WorldPosition: {x: 5, y: 0, z: 1}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 7f2f0a062bff8fe49a87aefcc9dd948c, type: 2}
+  - Name: Default_5_2
+    WorldPosition: {x: 5, y: 0, z: 2}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 7f2f0a062bff8fe49a87aefcc9dd948c, type: 2}
+  - Name: Default_5_3
+    WorldPosition: {x: 5, y: 0, z: 3}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 7f2f0a062bff8fe49a87aefcc9dd948c, type: 2}
+  - Name: Default_5_4
+    WorldPosition: {x: 5, y: 0, z: 4}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: a067ff6d22a0fa24b9c5567cfae19a7d, type: 2}
+  - Name: Default_5_5
+    WorldPosition: {x: 5, y: 0, z: 5}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 7f2f0a062bff8fe49a87aefcc9dd948c, type: 2}
+  - Name: Default_5_6
+    WorldPosition: {x: 5, y: 0, z: 6}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: a067ff6d22a0fa24b9c5567cfae19a7d, type: 2}
+  - Name: Default_5_7
+    WorldPosition: {x: 5, y: 0, z: 7}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 7f2f0a062bff8fe49a87aefcc9dd948c, type: 2}
+  - Name: Default_5_8
+    WorldPosition: {x: 5, y: 0, z: 8}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 7f2f0a062bff8fe49a87aefcc9dd948c, type: 2}
+  - Name: Default_5_9
+    WorldPosition: {x: 5, y: 0, z: 9}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 96f54dca82ca0dd40b7e4d935c321bee, type: 2}
+  - Name: Default_6_0
+    WorldPosition: {x: 6, y: 0, z: 0}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 96f54dca82ca0dd40b7e4d935c321bee, type: 2}
+  - Name: Default_6_1
+    WorldPosition: {x: 6, y: 0, z: 1}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: a067ff6d22a0fa24b9c5567cfae19a7d, type: 2}
+  - Name: Default_6_2
+    WorldPosition: {x: 6, y: 0, z: 2}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: a067ff6d22a0fa24b9c5567cfae19a7d, type: 2}
+  - Name: Default_6_3
+    WorldPosition: {x: 6, y: 0, z: 3}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 96f54dca82ca0dd40b7e4d935c321bee, type: 2}
+  - Name: Default_6_4
+    WorldPosition: {x: 6, y: 0, z: 4}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 7f2f0a062bff8fe49a87aefcc9dd948c, type: 2}
+  - Name: Default_6_5
+    WorldPosition: {x: 6, y: 0, z: 5}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 7f2f0a062bff8fe49a87aefcc9dd948c, type: 2}
+  - Name: Default_6_6
+    WorldPosition: {x: 6, y: 0, z: 6}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: a067ff6d22a0fa24b9c5567cfae19a7d, type: 2}
+  - Name: Default_6_7
+    WorldPosition: {x: 6, y: 0, z: 7}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 7f2f0a062bff8fe49a87aefcc9dd948c, type: 2}
+  - Name: Default_6_8
+    WorldPosition: {x: 6, y: 0, z: 8}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: a067ff6d22a0fa24b9c5567cfae19a7d, type: 2}
+  - Name: Default_6_9
+    WorldPosition: {x: 6, y: 0, z: 9}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 96f54dca82ca0dd40b7e4d935c321bee, type: 2}
+  - Name: Default_7_0
+    WorldPosition: {x: 7, y: 0, z: 0}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 96f54dca82ca0dd40b7e4d935c321bee, type: 2}
+  - Name: Default_7_1
+    WorldPosition: {x: 7, y: 0, z: 1}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 7f2f0a062bff8fe49a87aefcc9dd948c, type: 2}
+  - Name: Default_7_2
+    WorldPosition: {x: 7, y: 0, z: 2}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 96f54dca82ca0dd40b7e4d935c321bee, type: 2}
+  - Name: Default_7_3
+    WorldPosition: {x: 7, y: 0, z: 3}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 96f54dca82ca0dd40b7e4d935c321bee, type: 2}
+  - Name: Default_7_4
+    WorldPosition: {x: 7, y: 0, z: 4}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 96f54dca82ca0dd40b7e4d935c321bee, type: 2}
+  - Name: Default_7_5
+    WorldPosition: {x: 7, y: 0, z: 5}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 96f54dca82ca0dd40b7e4d935c321bee, type: 2}
+  - Name: Default_7_6
+    WorldPosition: {x: 7, y: 0, z: 6}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 96f54dca82ca0dd40b7e4d935c321bee, type: 2}
+  - Name: Default_7_7
+    WorldPosition: {x: 7, y: 0, z: 7}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: a067ff6d22a0fa24b9c5567cfae19a7d, type: 2}
+  - Name: Default_7_8
+    WorldPosition: {x: 7, y: 0, z: 8}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 96f54dca82ca0dd40b7e4d935c321bee, type: 2}
+  - Name: Default_7_9
+    WorldPosition: {x: 7, y: 0, z: 9}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: a067ff6d22a0fa24b9c5567cfae19a7d, type: 2}
+  - Name: Default_8_0
+    WorldPosition: {x: 8, y: 0, z: 0}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 7f2f0a062bff8fe49a87aefcc9dd948c, type: 2}
+  - Name: Default_8_1
+    WorldPosition: {x: 8, y: 0, z: 1}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: a067ff6d22a0fa24b9c5567cfae19a7d, type: 2}
+  - Name: Default_8_2
+    WorldPosition: {x: 8, y: 0, z: 2}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 96f54dca82ca0dd40b7e4d935c321bee, type: 2}
+  - Name: Default_8_3
+    WorldPosition: {x: 8, y: 0, z: 3}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: a067ff6d22a0fa24b9c5567cfae19a7d, type: 2}
+  - Name: Default_8_4
+    WorldPosition: {x: 8, y: 0, z: 4}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 96f54dca82ca0dd40b7e4d935c321bee, type: 2}
+  - Name: Default_8_5
+    WorldPosition: {x: 8, y: 0, z: 5}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: a067ff6d22a0fa24b9c5567cfae19a7d, type: 2}
+  - Name: Default_8_6
+    WorldPosition: {x: 8, y: 0, z: 6}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 7f2f0a062bff8fe49a87aefcc9dd948c, type: 2}
+  - Name: Default_8_7
+    WorldPosition: {x: 8, y: 0, z: 7}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: a067ff6d22a0fa24b9c5567cfae19a7d, type: 2}
+  - Name: Default_8_8
+    WorldPosition: {x: 8, y: 0, z: 8}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 96f54dca82ca0dd40b7e4d935c321bee, type: 2}
+  - Name: Default_8_9
+    WorldPosition: {x: 8, y: 0, z: 9}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 96f54dca82ca0dd40b7e4d935c321bee, type: 2}
+  - Name: Default_9_0
+    WorldPosition: {x: 9, y: 0, z: 0}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: a067ff6d22a0fa24b9c5567cfae19a7d, type: 2}
+  - Name: Default_9_1
+    WorldPosition: {x: 9, y: 0, z: 1}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 7f2f0a062bff8fe49a87aefcc9dd948c, type: 2}
+  - Name: Default_9_2
+    WorldPosition: {x: 9, y: 0, z: 2}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 7f2f0a062bff8fe49a87aefcc9dd948c, type: 2}
+  - Name: Default_9_3
+    WorldPosition: {x: 9, y: 0, z: 3}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 7f2f0a062bff8fe49a87aefcc9dd948c, type: 2}
+  - Name: Default_9_4
+    WorldPosition: {x: 9, y: 0, z: 4}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 96f54dca82ca0dd40b7e4d935c321bee, type: 2}
+  - Name: Default_9_5
+    WorldPosition: {x: 9, y: 0, z: 5}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: a067ff6d22a0fa24b9c5567cfae19a7d, type: 2}
+  - Name: Default_9_6
+    WorldPosition: {x: 9, y: 0, z: 6}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: a067ff6d22a0fa24b9c5567cfae19a7d, type: 2}
+  - Name: Default_9_7
+    WorldPosition: {x: 9, y: 0, z: 7}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: a067ff6d22a0fa24b9c5567cfae19a7d, type: 2}
+  - Name: Default_9_8
+    WorldPosition: {x: 9, y: 0, z: 8}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 96f54dca82ca0dd40b7e4d935c321bee, type: 2}
+  - Name: Default_9_9
+    WorldPosition: {x: 9, y: 0, z: 9}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: a067ff6d22a0fa24b9c5567cfae19a7d, type: 2}
+  - Name: Default_0_0
+    WorldPosition: {x: 0, y: 0, z: 0}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 96f54dca82ca0dd40b7e4d935c321bee, type: 2}
+  - Name: Default_0_1
+    WorldPosition: {x: 0, y: 0, z: 1}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 7f2f0a062bff8fe49a87aefcc9dd948c, type: 2}
+  - Name: Default_0_2
+    WorldPosition: {x: 0, y: 0, z: 2}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: a067ff6d22a0fa24b9c5567cfae19a7d, type: 2}
+  - Name: Default_0_3
+    WorldPosition: {x: 0, y: 0, z: 3}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: a067ff6d22a0fa24b9c5567cfae19a7d, type: 2}
+  - Name: Default_0_4
+    WorldPosition: {x: 0, y: 0, z: 4}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 96f54dca82ca0dd40b7e4d935c321bee, type: 2}
+  - Name: Default_0_5
+    WorldPosition: {x: 0, y: 0, z: 5}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: a067ff6d22a0fa24b9c5567cfae19a7d, type: 2}
+  - Name: Default_0_6
+    WorldPosition: {x: 0, y: 0, z: 6}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: a067ff6d22a0fa24b9c5567cfae19a7d, type: 2}
+  - Name: Default_0_7
+    WorldPosition: {x: 0, y: 0, z: 7}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 96f54dca82ca0dd40b7e4d935c321bee, type: 2}
+  - Name: Default_0_8
+    WorldPosition: {x: 0, y: 0, z: 8}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 7f2f0a062bff8fe49a87aefcc9dd948c, type: 2}
+  - Name: Default_0_9
+    WorldPosition: {x: 0, y: 0, z: 9}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 7f2f0a062bff8fe49a87aefcc9dd948c, type: 2}
+  - Name: Default_1_0
+    WorldPosition: {x: 1, y: 0, z: 0}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: a067ff6d22a0fa24b9c5567cfae19a7d, type: 2}
+  - Name: Default_1_1
+    WorldPosition: {x: 1, y: 0, z: 1}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 96f54dca82ca0dd40b7e4d935c321bee, type: 2}
+  - Name: Default_1_2
+    WorldPosition: {x: 1, y: 0, z: 2}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 96f54dca82ca0dd40b7e4d935c321bee, type: 2}
+  - Name: Default_1_3
+    WorldPosition: {x: 1, y: 0, z: 3}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 96f54dca82ca0dd40b7e4d935c321bee, type: 2}
+  - Name: Default_1_4
+    WorldPosition: {x: 1, y: 0, z: 4}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: a067ff6d22a0fa24b9c5567cfae19a7d, type: 2}
+  - Name: Default_1_5
+    WorldPosition: {x: 1, y: 0, z: 5}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 7f2f0a062bff8fe49a87aefcc9dd948c, type: 2}
+  - Name: Default_1_6
+    WorldPosition: {x: 1, y: 0, z: 6}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: a067ff6d22a0fa24b9c5567cfae19a7d, type: 2}
+  - Name: Default_1_7
+    WorldPosition: {x: 1, y: 0, z: 7}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: a067ff6d22a0fa24b9c5567cfae19a7d, type: 2}
+  - Name: Default_1_8
+    WorldPosition: {x: 1, y: 0, z: 8}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 7f2f0a062bff8fe49a87aefcc9dd948c, type: 2}
+  - Name: Default_1_9
+    WorldPosition: {x: 1, y: 0, z: 9}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 96f54dca82ca0dd40b7e4d935c321bee, type: 2}
+  - Name: Default_2_0
+    WorldPosition: {x: 2, y: 0, z: 0}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 96f54dca82ca0dd40b7e4d935c321bee, type: 2}
+  - Name: Default_2_1
+    WorldPosition: {x: 2, y: 0, z: 1}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 96f54dca82ca0dd40b7e4d935c321bee, type: 2}
+  - Name: Default_2_2
+    WorldPosition: {x: 2, y: 0, z: 2}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 96f54dca82ca0dd40b7e4d935c321bee, type: 2}
+  - Name: Default_2_3
+    WorldPosition: {x: 2, y: 0, z: 3}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 96f54dca82ca0dd40b7e4d935c321bee, type: 2}
+  - Name: Default_2_4
+    WorldPosition: {x: 2, y: 0, z: 4}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 96f54dca82ca0dd40b7e4d935c321bee, type: 2}
+  - Name: Default_2_5
+    WorldPosition: {x: 2, y: 0, z: 5}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 96f54dca82ca0dd40b7e4d935c321bee, type: 2}
+  - Name: Default_2_6
+    WorldPosition: {x: 2, y: 0, z: 6}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 7f2f0a062bff8fe49a87aefcc9dd948c, type: 2}
+  - Name: Default_2_7
+    WorldPosition: {x: 2, y: 0, z: 7}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: a067ff6d22a0fa24b9c5567cfae19a7d, type: 2}
+  - Name: Default_2_8
+    WorldPosition: {x: 2, y: 0, z: 8}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 96f54dca82ca0dd40b7e4d935c321bee, type: 2}
+  - Name: Default_2_9
+    WorldPosition: {x: 2, y: 0, z: 9}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 96f54dca82ca0dd40b7e4d935c321bee, type: 2}
+  - Name: Default_3_0
+    WorldPosition: {x: 3, y: 0, z: 0}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 7f2f0a062bff8fe49a87aefcc9dd948c, type: 2}
+  - Name: Default_3_1
+    WorldPosition: {x: 3, y: 0, z: 1}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 7f2f0a062bff8fe49a87aefcc9dd948c, type: 2}
+  - Name: Default_3_2
+    WorldPosition: {x: 3, y: 0, z: 2}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: a067ff6d22a0fa24b9c5567cfae19a7d, type: 2}
+  - Name: Default_3_3
+    WorldPosition: {x: 3, y: 0, z: 3}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 7f2f0a062bff8fe49a87aefcc9dd948c, type: 2}
+  - Name: Default_3_4
+    WorldPosition: {x: 3, y: 0, z: 4}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: a067ff6d22a0fa24b9c5567cfae19a7d, type: 2}
+  - Name: Default_3_5
+    WorldPosition: {x: 3, y: 0, z: 5}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: a067ff6d22a0fa24b9c5567cfae19a7d, type: 2}
+  - Name: Default_3_6
+    WorldPosition: {x: 3, y: 0, z: 6}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 96f54dca82ca0dd40b7e4d935c321bee, type: 2}
+  - Name: Default_3_7
+    WorldPosition: {x: 3, y: 0, z: 7}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 7f2f0a062bff8fe49a87aefcc9dd948c, type: 2}
+  - Name: Default_3_8
+    WorldPosition: {x: 3, y: 0, z: 8}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 96f54dca82ca0dd40b7e4d935c321bee, type: 2}
+  - Name: Default_3_9
+    WorldPosition: {x: 3, y: 0, z: 9}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: a067ff6d22a0fa24b9c5567cfae19a7d, type: 2}
+  - Name: Default_4_0
+    WorldPosition: {x: 4, y: 0, z: 0}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: a067ff6d22a0fa24b9c5567cfae19a7d, type: 2}
+  - Name: Default_4_1
+    WorldPosition: {x: 4, y: 0, z: 1}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 96f54dca82ca0dd40b7e4d935c321bee, type: 2}
+  - Name: Default_4_2
+    WorldPosition: {x: 4, y: 0, z: 2}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 96f54dca82ca0dd40b7e4d935c321bee, type: 2}
+  - Name: Default_4_3
+    WorldPosition: {x: 4, y: 0, z: 3}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 96f54dca82ca0dd40b7e4d935c321bee, type: 2}
+  - Name: Default_4_4
+    WorldPosition: {x: 4, y: 0, z: 4}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 96f54dca82ca0dd40b7e4d935c321bee, type: 2}
+  - Name: Default_4_5
+    WorldPosition: {x: 4, y: 0, z: 5}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: a067ff6d22a0fa24b9c5567cfae19a7d, type: 2}
+  - Name: Default_4_6
+    WorldPosition: {x: 4, y: 0, z: 6}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: a067ff6d22a0fa24b9c5567cfae19a7d, type: 2}
+  - Name: Default_4_7
+    WorldPosition: {x: 4, y: 0, z: 7}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: a067ff6d22a0fa24b9c5567cfae19a7d, type: 2}
+  - Name: Default_4_8
+    WorldPosition: {x: 4, y: 0, z: 8}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 96f54dca82ca0dd40b7e4d935c321bee, type: 2}
+  - Name: Default_4_9
+    WorldPosition: {x: 4, y: 0, z: 9}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 7f2f0a062bff8fe49a87aefcc9dd948c, type: 2}
+  - Name: Default_5_0
+    WorldPosition: {x: 5, y: 0, z: 0}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: a067ff6d22a0fa24b9c5567cfae19a7d, type: 2}
+  - Name: Default_5_1
+    WorldPosition: {x: 5, y: 0, z: 1}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 7f2f0a062bff8fe49a87aefcc9dd948c, type: 2}
+  - Name: Default_5_2
+    WorldPosition: {x: 5, y: 0, z: 2}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: a067ff6d22a0fa24b9c5567cfae19a7d, type: 2}
+  - Name: Default_5_3
+    WorldPosition: {x: 5, y: 0, z: 3}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: a067ff6d22a0fa24b9c5567cfae19a7d, type: 2}
+  - Name: Default_5_4
+    WorldPosition: {x: 5, y: 0, z: 4}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: a067ff6d22a0fa24b9c5567cfae19a7d, type: 2}
+  - Name: Default_5_5
+    WorldPosition: {x: 5, y: 0, z: 5}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: a067ff6d22a0fa24b9c5567cfae19a7d, type: 2}
+  - Name: Default_5_6
+    WorldPosition: {x: 5, y: 0, z: 6}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 96f54dca82ca0dd40b7e4d935c321bee, type: 2}
+  - Name: Default_5_7
+    WorldPosition: {x: 5, y: 0, z: 7}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 96f54dca82ca0dd40b7e4d935c321bee, type: 2}
+  - Name: Default_5_8
+    WorldPosition: {x: 5, y: 0, z: 8}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 7f2f0a062bff8fe49a87aefcc9dd948c, type: 2}
+  - Name: Default_5_9
+    WorldPosition: {x: 5, y: 0, z: 9}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 96f54dca82ca0dd40b7e4d935c321bee, type: 2}
+  - Name: Default_6_0
+    WorldPosition: {x: 6, y: 0, z: 0}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: a067ff6d22a0fa24b9c5567cfae19a7d, type: 2}
+  - Name: Default_6_1
+    WorldPosition: {x: 6, y: 0, z: 1}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 7f2f0a062bff8fe49a87aefcc9dd948c, type: 2}
+  - Name: Default_6_2
+    WorldPosition: {x: 6, y: 0, z: 2}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 96f54dca82ca0dd40b7e4d935c321bee, type: 2}
+  - Name: Default_6_3
+    WorldPosition: {x: 6, y: 0, z: 3}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 7f2f0a062bff8fe49a87aefcc9dd948c, type: 2}
+  - Name: Default_6_4
+    WorldPosition: {x: 6, y: 0, z: 4}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: a067ff6d22a0fa24b9c5567cfae19a7d, type: 2}
+  - Name: Default_6_5
+    WorldPosition: {x: 6, y: 0, z: 5}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 7f2f0a062bff8fe49a87aefcc9dd948c, type: 2}
+  - Name: Default_6_6
+    WorldPosition: {x: 6, y: 0, z: 6}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 7f2f0a062bff8fe49a87aefcc9dd948c, type: 2}
+  - Name: Default_6_7
+    WorldPosition: {x: 6, y: 0, z: 7}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 96f54dca82ca0dd40b7e4d935c321bee, type: 2}
+  - Name: Default_6_8
+    WorldPosition: {x: 6, y: 0, z: 8}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 96f54dca82ca0dd40b7e4d935c321bee, type: 2}
+  - Name: Default_6_9
+    WorldPosition: {x: 6, y: 0, z: 9}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 7f2f0a062bff8fe49a87aefcc9dd948c, type: 2}
+  - Name: Default_7_0
+    WorldPosition: {x: 7, y: 0, z: 0}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 7f2f0a062bff8fe49a87aefcc9dd948c, type: 2}
+  - Name: Default_7_1
+    WorldPosition: {x: 7, y: 0, z: 1}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: a067ff6d22a0fa24b9c5567cfae19a7d, type: 2}
+  - Name: Default_7_2
+    WorldPosition: {x: 7, y: 0, z: 2}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: a067ff6d22a0fa24b9c5567cfae19a7d, type: 2}
+  - Name: Default_7_3
+    WorldPosition: {x: 7, y: 0, z: 3}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 7f2f0a062bff8fe49a87aefcc9dd948c, type: 2}
+  - Name: Default_7_4
+    WorldPosition: {x: 7, y: 0, z: 4}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: a067ff6d22a0fa24b9c5567cfae19a7d, type: 2}
+  - Name: Default_7_5
+    WorldPosition: {x: 7, y: 0, z: 5}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: a067ff6d22a0fa24b9c5567cfae19a7d, type: 2}
+  - Name: Default_7_6
+    WorldPosition: {x: 7, y: 0, z: 6}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 7f2f0a062bff8fe49a87aefcc9dd948c, type: 2}
+  - Name: Default_7_7
+    WorldPosition: {x: 7, y: 0, z: 7}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 7f2f0a062bff8fe49a87aefcc9dd948c, type: 2}
+  - Name: Default_7_8
+    WorldPosition: {x: 7, y: 0, z: 8}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 7f2f0a062bff8fe49a87aefcc9dd948c, type: 2}
+  - Name: Default_7_9
+    WorldPosition: {x: 7, y: 0, z: 9}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: a067ff6d22a0fa24b9c5567cfae19a7d, type: 2}
+  - Name: Default_8_0
+    WorldPosition: {x: 8, y: 0, z: 0}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 7f2f0a062bff8fe49a87aefcc9dd948c, type: 2}
+  - Name: Default_8_1
+    WorldPosition: {x: 8, y: 0, z: 1}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: a067ff6d22a0fa24b9c5567cfae19a7d, type: 2}
+  - Name: Default_8_2
+    WorldPosition: {x: 8, y: 0, z: 2}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: a067ff6d22a0fa24b9c5567cfae19a7d, type: 2}
+  - Name: Default_8_3
+    WorldPosition: {x: 8, y: 0, z: 3}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: a067ff6d22a0fa24b9c5567cfae19a7d, type: 2}
+  - Name: Default_8_4
+    WorldPosition: {x: 8, y: 0, z: 4}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: a067ff6d22a0fa24b9c5567cfae19a7d, type: 2}
+  - Name: Default_8_5
+    WorldPosition: {x: 8, y: 0, z: 5}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 96f54dca82ca0dd40b7e4d935c321bee, type: 2}
+  - Name: Default_8_6
+    WorldPosition: {x: 8, y: 0, z: 6}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: a067ff6d22a0fa24b9c5567cfae19a7d, type: 2}
+  - Name: Default_8_7
+    WorldPosition: {x: 8, y: 0, z: 7}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 7f2f0a062bff8fe49a87aefcc9dd948c, type: 2}
+  - Name: Default_8_8
+    WorldPosition: {x: 8, y: 0, z: 8}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 7f2f0a062bff8fe49a87aefcc9dd948c, type: 2}
+  - Name: Default_8_9
+    WorldPosition: {x: 8, y: 0, z: 9}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 7f2f0a062bff8fe49a87aefcc9dd948c, type: 2}
+  - Name: Default_9_0
+    WorldPosition: {x: 9, y: 0, z: 0}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: a067ff6d22a0fa24b9c5567cfae19a7d, type: 2}
+  - Name: Default_9_1
+    WorldPosition: {x: 9, y: 0, z: 1}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 96f54dca82ca0dd40b7e4d935c321bee, type: 2}
+  - Name: Default_9_2
+    WorldPosition: {x: 9, y: 0, z: 2}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 7f2f0a062bff8fe49a87aefcc9dd948c, type: 2}
+  - Name: Default_9_3
+    WorldPosition: {x: 9, y: 0, z: 3}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: a067ff6d22a0fa24b9c5567cfae19a7d, type: 2}
+  - Name: Default_9_4
+    WorldPosition: {x: 9, y: 0, z: 4}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: a067ff6d22a0fa24b9c5567cfae19a7d, type: 2}
+  - Name: Default_9_5
+    WorldPosition: {x: 9, y: 0, z: 5}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 7f2f0a062bff8fe49a87aefcc9dd948c, type: 2}
+  - Name: Default_9_6
+    WorldPosition: {x: 9, y: 0, z: 6}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 7f2f0a062bff8fe49a87aefcc9dd948c, type: 2}
+  - Name: Default_9_7
+    WorldPosition: {x: 9, y: 0, z: 7}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: 7f2f0a062bff8fe49a87aefcc9dd948c, type: 2}
+  - Name: Default_9_8
+    WorldPosition: {x: 9, y: 0, z: 8}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: a067ff6d22a0fa24b9c5567cfae19a7d, type: 2}
+  - Name: Default_9_9
+    WorldPosition: {x: 9, y: 0, z: 9}
+    walkable: 1
+    Weight: 1
+    terrainType: {fileID: 11400000, guid: a067ff6d22a0fa24b9c5567cfae19a7d, type: 2}
 --- !u!4 &1995583410
 Transform:
   m_ObjectHideFlags: 0
