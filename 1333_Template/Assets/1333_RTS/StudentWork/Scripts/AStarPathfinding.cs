@@ -5,20 +5,22 @@ using UnityEngine;
 
 public class AStarPathfinding : MonoBehaviour
 {
-    [SerializeField] private GridManager gridManager;
-    private GridNode[,] grid;
+    [SerializeField] private GridManager gridManager; // Reference to the grid
+    private GridNode[,] grid; // 2D grid array for pathfinding
 
+    // Public method to initiate pathfinding from one world position to another
     public List<GridNode> FindPath(Vector3 fromWorld, Vector3 toWorld, int width = 1, int height = 1)
     {
-        BuildGridReference();
+        BuildGridReference(); // Convert list of nodes into 2D array
         Vector2Int start = WorldToGrid(fromWorld);
         Vector2Int end = WorldToGrid(toWorld);
 
         if (!IsValidCoord(start) || !IsValidCoord(end)) return null;
 
-        return AStar(start, end);
+        return AStar(start, end); // Perform A* search
     }
 
+    // Converts AllNodes into a 2D grid array using their parsed names
     void BuildGridReference()
     {
         int width = gridManager.GridSettings.GridSizeX;
@@ -34,16 +36,19 @@ public class AStarPathfinding : MonoBehaviour
         }
     }
 
+    // Converts a world position to grid coordinates
     Vector2Int WorldToGrid(Vector3 worldPos)
     {
         return new Vector2Int(Mathf.RoundToInt(worldPos.x), Mathf.RoundToInt(worldPos.z));
     }
 
+    // Checks if coordinates are within grid bounds
     bool IsValidCoord(Vector2Int coord)
     {
         return coord.x >= 0 && coord.x < grid.GetLength(0) && coord.y >= 0 && coord.y < grid.GetLength(1);
     }
 
+    // Core A* pathfinding algorithm
     List<GridNode> AStar(Vector2Int startCoord, Vector2Int endCoord)
     {
         GridNode start = grid[startCoord.x, startCoord.y];
@@ -68,6 +73,7 @@ public class AStarPathfinding : MonoBehaviour
             GridNode current = openSet[0];
             float lowestFScore = fScore[current];
 
+            // Find node in openSet with lowest fScore
             foreach (var node in openSet)
             {
                 if (fScore[node] < lowestFScore)
@@ -100,9 +106,10 @@ public class AStarPathfinding : MonoBehaviour
             }
         }
 
-        return new List<GridNode>(); // No path found
+        return new List<GridNode>(); // Return empty list if no path found
     }
 
+    // Manhattan distance heuristic for grid-based pathfinding
     float Heuristic(GridNode a, GridNode b)
     {
         string[] aParts = a.Name.Split('_');
@@ -111,9 +118,10 @@ public class AStarPathfinding : MonoBehaviour
         int ay = int.Parse(aParts[2]);
         int bx = int.Parse(bParts[1]);
         int by = int.Parse(bParts[2]);
-        return Mathf.Abs(ax - bx) + Mathf.Abs(ay - by); // Manhattan distance
+        return Mathf.Abs(ax - bx) + Mathf.Abs(ay - by);
     }
 
+    // Reconstructs the final path by tracing back from the goal node
     List<GridNode> ReconstructPath(Dictionary<GridNode, GridNode> cameFrom, GridNode current)
     {
         List<GridNode> path = new() { current };
@@ -125,12 +133,14 @@ public class AStarPathfinding : MonoBehaviour
         return path;
     }
 
+    // Uses reflection to access the private AllNodes list from GridManager
     List<GridNode> GetAllNodes()
     {
         var field = typeof(GridManager).GetField("AllNodes", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
         return field.GetValue(gridManager) as List<GridNode>;
     }
 
+    // Finds valid adjacent neighbors (no diagonals)
     List<GridNode> GetNeighbors(GridNode node)
     {
         List<GridNode> neighbors = new();
