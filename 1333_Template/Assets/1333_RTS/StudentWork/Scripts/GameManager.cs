@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -10,5 +11,10 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         gridManager.InitializedGrid();
+    }
+
+    private void Start()
+    {
+        unitManager.SpawnDemoUnits(gridManager.GetGrid(), gridManager.GridSettings);
     }
 }

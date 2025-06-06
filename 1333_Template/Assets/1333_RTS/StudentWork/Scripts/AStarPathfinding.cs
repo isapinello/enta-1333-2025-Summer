@@ -6,32 +6,17 @@ using UnityEngine;
 public class AStarPathfinding : MonoBehaviour
 {
     [SerializeField] private GridManager gridManager;
-
-    private List<GridNode> finalPath = new();
     private GridNode[,] grid;
 
-    private void Start()
+    public List<GridNode> FindPath(Vector3 fromWorld, Vector3 toWorld, int width = 1, int height = 1)
     {
-        Reset();
-    }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            Reset();
-        }
-    }
-
-    private void Reset()
-    {
-        gridManager.InitializedGrid();
         BuildGridReference();
+        Vector2Int start = WorldToGrid(fromWorld);
+        Vector2Int end = WorldToGrid(toWorld);
 
-        Vector2Int start = GetRandomCoord();
-        Vector2Int end = GetRandomCoord();
+        if (!IsValidCoord(start) || !IsValidCoord(end)) return null;
 
-        finalPath = AStar(start, end);
+        return AStar(start, end);
     }
 
     void BuildGridReference()
@@ -49,18 +34,14 @@ public class AStarPathfinding : MonoBehaviour
         }
     }
 
-    List<GridNode> GetAllNodes()
+    Vector2Int WorldToGrid(Vector3 worldPos)
     {
-        var field = typeof(GridManager).GetField("AllNodes", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
-        return field.GetValue(gridManager) as List<GridNode>;
+        return new Vector2Int(Mathf.RoundToInt(worldPos.x), Mathf.RoundToInt(worldPos.z));
     }
 
-    Vector2Int GetRandomCoord()
+    bool IsValidCoord(Vector2Int coord)
     {
-        return new Vector2Int(
-            Random.Range(0, gridManager.GridSettings.GridSizeX),
-            Random.Range(0, gridManager.GridSettings.GridSizeY)
-        );
+        return coord.x >= 0 && coord.x < grid.GetLength(0) && coord.y >= 0 && coord.y < grid.GetLength(1);
     }
 
     List<GridNode> AStar(Vector2Int startCoord, Vector2Int endCoord)
@@ -144,6 +125,12 @@ public class AStarPathfinding : MonoBehaviour
         return path;
     }
 
+    List<GridNode> GetAllNodes()
+    {
+        var field = typeof(GridManager).GetField("AllNodes", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+        return field.GetValue(gridManager) as List<GridNode>;
+    }
+
     List<GridNode> GetNeighbors(GridNode node)
     {
         List<GridNode> neighbors = new();
@@ -151,8 +138,7 @@ public class AStarPathfinding : MonoBehaviour
         int x = int.Parse(split[1]);
         int y = int.Parse(split[2]);
 
-        Vector2Int[] directions = new Vector2Int[]
-        {
+        Vector2Int[] directions = new Vector2Int[] {
             new(0, 1), new(1, 0), new(0, -1), new(-1, 0)
         };
 
@@ -168,22 +154,5 @@ public class AStarPathfinding : MonoBehaviour
         }
 
         return neighbors;
-    }
-
-    private void OnDrawGizmos()
-    {
-        if (finalPath == null || finalPath.Count == 0) return;
-
-        Gizmos.color = Color.green;
-
-        foreach (var node in finalPath)
-        {
-            Gizmos.DrawSphere(node.WorldPosition, 0.3f);
-        }
-
-        for (int i = 0; i < finalPath.Count - 1; i++)
-        {
-            Gizmos.DrawLine(finalPath[i].WorldPosition, finalPath[i + 1].WorldPosition);
-        }
     }
 }
