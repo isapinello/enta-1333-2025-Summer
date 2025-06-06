@@ -5,7 +5,15 @@ using UnityEngine;
 
 public abstract class UnitBase : MonoBehaviour
 {
-    [SerializeField] protected TagUnitType _unitType;
+    [SerializeField] public UnitType _unitType;
 
-    //public virtual int Width => _unitType != null ? _unitType.Width : 1;
+    public int Width => _unitType.width;
+    public int Height => _unitType.height;
+    public float MaxHealth => _unitType.health;
+    public float MoveSpeed => _unitType.moveSpeed;
+    public float AttackRange => _unitType.attackRange;
+    public float AttackDamage => _unitType.attackDamage;
+    public string UnitName => _unitType.unitName;
+
+    public abstract void MoveTo(GridNode targetNode);
 }
