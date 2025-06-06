@@ -1,2 +1,7 @@
 # enta-1333-2025-Summer
-Lectures, Labs, and Assignment examples for students to fork and review.
+To select the units:
+Left-click on one unit to select it
+Shift + Left-click to select multiple units
+
+To select the location to go:
+Right-click on the Ground
