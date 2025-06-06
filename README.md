@@ -5,3 +5,5 @@ Shift + Left-click to select multiple units
 
 To select the location to go:
 Right-click on the Ground
+
+You can find my game scene in 'Assets\1333_RTS\StudentWork\Scenes'
