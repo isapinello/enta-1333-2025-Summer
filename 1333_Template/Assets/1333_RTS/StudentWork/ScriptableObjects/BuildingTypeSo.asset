@@ -14,6 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Buildings:
   - BuildingId: Wall
+    buildingPrefabs: {fileID: 100000, guid: 822c1d4222eb4574f957717b2bd7934d, type: 3}
   - BuildingId: Tower
+    buildingPrefabs: {fileID: 100000, guid: f38b9a56b23e4df499eaede1c2276296, type: 3}
   - BuildingId: House
+    buildingPrefabs: {fileID: 100000, guid: 05035b78d90b21f43854dfe010ccd289, type: 3}
   - BuildingId: Gate
+    buildingPrefabs: {fileID: 100000, guid: e9554c943e8d60643a12a6ee55c092e6, type: 3}

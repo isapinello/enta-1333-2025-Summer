@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private GridManager gridManager;
     [SerializeField] private UnitManager unitManager;
+    [SerializeField] private BuildingPlacing buildingPlacing;
 
     private void Awake()
     {
@@ -16,5 +17,9 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         unitManager.SpawnDemoUnits(gridManager.GetGrid(), gridManager.GridSettings);
+    }
+    public void StartPlacingBuilding(BuildingData buildingData)
+    {
+        buildingPlacing.BeginPlacing(buildingData);
     }
 }
