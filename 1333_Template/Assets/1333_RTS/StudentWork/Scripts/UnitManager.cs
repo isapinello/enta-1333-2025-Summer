@@ -4,45 +4,15 @@ using UnityEngine;
 
 public class UnitManager : MonoBehaviour
 {
-    // Prefab used to spawn units in the scene
     [SerializeField] private GameObject unitPrefab;
-
-    // Reference to the A* pathfinding system to assign to each unit
     [SerializeField] private AStarPathfinding pathfinder;
-
-    // The unit's configuration, including move speed and material
     [SerializeField] private UnitType unitType;
+    [SerializeField] private GridManager gridManager;
 
-    // List of all units spawned in the game
     private List<UnitInstance> allUnits = new();
-
-    // List of units currently selected by the player
     public List<UnitInstance> SelectedUnits { get; private set; } = new();
 
-    // Spawns a demo batch of units at random walkable positions on the grid
-    public void SpawnDemoUnits(GridNode[,] grid, GridSettings settings)
-    {
-        int spawned = 0;
-        int targetCount = 5;
-
-        while (spawned < targetCount)
-        {
-            int x = Random.Range(0, settings.GridSizeX);
-            int y = Random.Range(0, settings.GridSizeY);
-            GridNode node = grid[x, y];
-
-            // Skip non-walkable tiles
-            if (!node.walkable) continue;
-
-            // Adjust spawn position slightly above the tile
-            Vector3 spawnPos = node.WorldPosition + Vector3.up * 0.5f;
-            SpawnUnit(spawnPos);
-            spawned++;
-        }
-    }
-
-    // Instantiates a unit and initializes it
-    public void SpawnUnit(Vector3 position)
+    void SpawnUnit(Vector3 position)
     {
         var obj = Instantiate(unitPrefab, position, Quaternion.identity);
         var unit = obj.GetComponent<UnitInstance>();
@@ -50,12 +20,48 @@ public class UnitManager : MonoBehaviour
         allUnits.Add(unit);
     }
 
-    // Handles selecting a unit (single or multi-select depending on shift key)
+    public void SpawnUnitsNear(Vector3 bottomLeftPos, int count, int buildingSizeX, int buildingSizeY)
+    {
+        GridNode[,] grid = gridManager.GetGrid();
+        GridNode originNode = gridManager.GetNodeFromWorldPosition(bottomLeftPos);
+        if (originNode == null) return;
+
+        int startX = originNode.GridX + buildingSizeX;
+        int startY = originNode.GridY;
+
+        int spawned = 0;
+        int maxSearchRadius = 10;
+
+        for (int r = 0; r <= maxSearchRadius && spawned < count; r++)
+        {
+            for (int dx = -r; dx <= r; dx++)
+            {
+                for (int dy = -r; dy <= r; dy++)
+                {
+                    int x = startX + dx;
+                    int y = startY + dy;
+
+                    if (gridManager.IsValidCoord(x, y))
+                    {
+                        GridNode node = grid[x, y];
+                        if (node.walkable && !node.IsOccupied)
+                        {
+                            SpawnUnit(node.WorldPosition + Vector3.up * 0.5f);
+                            node.IsOccupied = true;
+                            spawned++;
+                            if (spawned >= count) return;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     public void SelectUnit(UnitInstance unit, bool additive)
     {
         if (!additive)
         {
-            DeselectAll(); // Deselect others if not holding shift
+            DeselectAll();
         }
 
         if (!SelectedUnits.Contains(unit))
@@ -65,7 +71,6 @@ public class UnitManager : MonoBehaviour
         }
     }
 
-    // Deselects all currently selected units
     public void DeselectAll()
     {
         foreach (var unit in SelectedUnits)
@@ -73,14 +78,5 @@ public class UnitManager : MonoBehaviour
             unit.OnDeselect();
         }
         SelectedUnits.Clear();
-    }
-
-    // Issues a move command to all selected units
-    public void CommandSelectedUnitsToMove(GridNode targetNode)
-    {
-        foreach (var unit in SelectedUnits)
-        {
-            unit.MoveTo(targetNode);
-        }
     }
 }

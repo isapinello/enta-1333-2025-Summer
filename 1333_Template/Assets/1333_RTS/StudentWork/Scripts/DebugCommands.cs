@@ -9,7 +9,6 @@ public class DebugCommands : MonoBehaviour
     private void OnEnable()
     {
         DebugLogConsole.AddCommand("HelloWorld", "says  heyy", HelloWorld);
-        DebugLogConsole.AddCommand<Vector3>("SpawnUnit", "spawns a new unit", SpawnUnit);
     }
     private void OnDisable()
     {
@@ -18,9 +17,5 @@ public class DebugCommands : MonoBehaviour
     private void HelloWorld()
     {
         Debug.Log("heyyy");
-    }
-    private void SpawnUnit(Vector3 position)
-    {
-        _unitManager.SpawnUnit(position);
     }
 }

@@ -13,4 +13,11 @@ public class BuildingData
 {
     public string BuildingId;
     public GameObject buildingPrefabs;
+    public int gridSizeX = 1;
+    public int gridSizeY = 1;
+
+    public int gridOffsetX = 1;
+    public int gridOffsetY = 1;
+
+    public bool canSpawnUnits = false;
 }
