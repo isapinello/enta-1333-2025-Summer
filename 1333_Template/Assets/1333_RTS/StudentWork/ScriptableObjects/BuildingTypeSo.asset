@@ -14,28 +14,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Buildings:
   - BuildingId: Wall
-    buildingPrefabs: {fileID: 5028979888389326143, guid: 353010198be746b46a26f8b84ccc22db, type: 3}
+    buildingPrefabs: {fileID: 9187520666358013087, guid: d4539974bc81bf34fb2f8f2204f364bc, type: 3}
     gridSizeX: 3
-    gridSizeY: 8
+    gridSizeY: 6
     gridOffsetX: 1
-    gridOffsetY: 4
+    gridOffsetY: 2
     canSpawnUnits: 0
   - BuildingId: Tower
-    buildingPrefabs: {fileID: 381123537945108921, guid: 89775f58cbb9f3744981420de475a2be, type: 3}
+    buildingPrefabs: {fileID: 1122867325520416810, guid: 3f317182d2ac6c3429ddfbb7187c96cf, type: 3}
     gridSizeX: 5
     gridSizeY: 5
     gridOffsetX: 2
     gridOffsetY: 2
     canSpawnUnits: 1
   - BuildingId: House
-    buildingPrefabs: {fileID: 1159007436229517031, guid: b28c51a75e5a4484080235b90ea4d068, type: 3}
+    buildingPrefabs: {fileID: 9044635726554180957, guid: d5514639229aa5b44b9a4c4738eb7b63, type: 3}
     gridSizeX: 5
     gridSizeY: 5
     gridOffsetX: 2
     gridOffsetY: 2
     canSpawnUnits: 1
   - BuildingId: Gate
-    buildingPrefabs: {fileID: 4546921027522355491, guid: 4328563dadc913349adb0ca4e23093fa, type: 3}
+    buildingPrefabs: {fileID: 1638353095618907072, guid: 2ad50a24c6e93ed4ca353f1be43ba277, type: 3}
     gridSizeX: 3
     gridSizeY: 8
     gridOffsetX: 1

@@ -4,24 +4,29 @@ using UnityEngine;
 
 public class BuildingPlacing : MonoBehaviour
 {
-    [SerializeField] private GridManager gridManager;
-    [SerializeField] private UnitManager unitManager;
-    private GameObject previewInstance;
-    private BuildingData currentBuilding;
-    private bool placing = false;
-    private Material[] originalMaterials;
+    [SerializeField] private GridManager gridManager; // Reference to the grid system
+    [SerializeField] private UnitManager unitManager; // Reference to unit manager for spawning units
+    private GameObject previewInstance;               // The visual preview of the building
+    private BuildingData currentBuilding;             // The building type being placed
+    private bool placing = false;                     // Flag to indicate if we're currently placing a building
+    private Material[] originalMaterials;             // Backup of original materials for restoring after placement
+    private Vector3 baseEuler;                        // Base rotation of the preview object
+    private int rotationIndex = 0;                    // 0, 1, 2, 3 => 0°, 90°, 180°, 270°
 
     public void BeginPlacing(BuildingData buildingData)
     {
         currentBuilding = buildingData;
-        previewInstance = Instantiate(buildingData.buildingPrefabs);
+        previewInstance = Instantiate(buildingData.buildingPrefabs); // Instantiate preview model
         foreach (var col in previewInstance.GetComponentsInChildren<Collider>())
-            col.enabled = false;
-        placing = true;
+            col.enabled = false; // Disable collisions for placement phase
 
-        originalMaterials = previewInstance.GetComponentInChildren<Renderer>().materials;
+        placing = true;
+        originalMaterials = previewInstance.GetComponentInChildren<Renderer>().materials; // Store original materials
+        baseEuler = previewInstance.transform.eulerAngles;
+        rotationIndex = 0;
     }
 
+    // Check if we can place the building at a given node
     private bool CanPlaceBuildingAt(GridNode originNode)
     {
         for (int x = 0; x < currentBuilding.gridSizeX; x++)
@@ -43,6 +48,7 @@ public class BuildingPlacing : MonoBehaviour
     {
         if (!placing || currentBuilding == null || previewInstance == null) return;
 
+        // Cancel placement on ESC
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             Destroy(previewInstance);
@@ -50,11 +56,15 @@ public class BuildingPlacing : MonoBehaviour
             return;
         }
 
+        // Rotate the building 90 degrees clockwise on right-click
         if (Input.GetMouseButtonDown(1))
         {
-            previewInstance.transform.Rotate(0, 90f, 0);
+            rotationIndex = (rotationIndex + 1) % 4;
+            float newYaw = baseEuler.y + rotationIndex * 90f;
+            previewInstance.transform.rotation = Quaternion.Euler(baseEuler.x, newYaw, baseEuler.z);
         }
 
+        // Raycast to ground to follow mouse position
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out RaycastHit hit))
         {
@@ -65,17 +75,18 @@ public class BuildingPlacing : MonoBehaviour
                 Mathf.Floor(rawPos.z)
             );
 
-            previewInstance.transform.position = gridPos + new Vector3(0, 0.5f, 0);
+            previewInstance.transform.position = gridPos + new Vector3(0, 0.5f, 0); // Offset to center
 
             var node = gridManager.GetNodeFromWorldPosition(gridPos);
             if (node != null)
             {
                 bool canPlace = CanPlaceBuildingAt(node);
+                SetGhostColor(canPlace ? Color.green : Color.red); // Change preview color
 
-                SetGhostColor(canPlace ? Color.green : Color.red);
-
+                // Final placement with left-click
                 if (canPlace && Input.GetMouseButtonDown(0))
                 {
+                    // Mark affected grid nodes as unwalkable and occupied
                     for (int x = 0; x < currentBuilding.gridSizeX; x++)
                     {
                         for (int y = 0; y < currentBuilding.gridSizeY; y++)
@@ -89,10 +100,12 @@ public class BuildingPlacing : MonoBehaviour
                         }
                     }
 
+                    // Finalize the visual placement
                     previewInstance.transform.position = gridPos + new Vector3(0, 0.5f, 0);
                     foreach (var col in previewInstance.GetComponentsInChildren<Collider>())
                         col.enabled = true;
 
+                    // Restore original material settings
                     foreach (var renderer in previewInstance.GetComponentsInChildren<Renderer>())
                     {
                         foreach (var mat in renderer.materials)
@@ -109,6 +122,7 @@ public class BuildingPlacing : MonoBehaviour
                         }
                     }
 
+                    // Spawn units if applicable
                     if (currentBuilding.canSpawnUnits)
                     {
                         unitManager.SpawnUnitsNear(
@@ -125,11 +139,12 @@ public class BuildingPlacing : MonoBehaviour
             }
             else
             {
-                SetGhostColor(Color.red);
+                SetGhostColor(Color.red); // Invalid position
             }
         }
     }
 
+    // Update material to ghost color
     private void SetGhostColor(Color color)
     {
         foreach (var renderer in previewInstance.GetComponentsInChildren<Renderer>())
@@ -137,7 +152,7 @@ public class BuildingPlacing : MonoBehaviour
             foreach (var mat in renderer.materials)
             {
                 mat.color = color;
-                mat.SetFloat("_Mode", 2);
+                mat.SetFloat("_Mode", 2); // Transparent
                 mat.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.SrcAlpha);
                 mat.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.OneMinusSrcAlpha);
                 mat.SetInt("_ZWrite", 0);
