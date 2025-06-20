@@ -14,10 +14,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Buildings:
   - BuildingId: Wall
-    buildingPrefabs: {fileID: 100000, guid: 822c1d4222eb4574f957717b2bd7934d, type: 3}
+    buildingPrefabs: {fileID: 5028979888389326143, guid: 353010198be746b46a26f8b84ccc22db, type: 3}
+    gridSizeX: 3
+    gridSizeY: 8
+    gridOffsetX: 1
+    gridOffsetY: 4
+    canSpawnUnits: 0
   - BuildingId: Tower
-    buildingPrefabs: {fileID: 100000, guid: f38b9a56b23e4df499eaede1c2276296, type: 3}
+    buildingPrefabs: {fileID: 381123537945108921, guid: 89775f58cbb9f3744981420de475a2be, type: 3}
+    gridSizeX: 5
+    gridSizeY: 5
+    gridOffsetX: 2
+    gridOffsetY: 2
+    canSpawnUnits: 1
   - BuildingId: House
-    buildingPrefabs: {fileID: 100000, guid: 05035b78d90b21f43854dfe010ccd289, type: 3}
+    buildingPrefabs: {fileID: 1159007436229517031, guid: b28c51a75e5a4484080235b90ea4d068, type: 3}
+    gridSizeX: 5
+    gridSizeY: 5
+    gridOffsetX: 2
+    gridOffsetY: 2
+    canSpawnUnits: 1
   - BuildingId: Gate
-    buildingPrefabs: {fileID: 100000, guid: e9554c943e8d60643a12a6ee55c092e6, type: 3}
+    buildingPrefabs: {fileID: 4546921027522355491, guid: 4328563dadc913349adb0ca4e23093fa, type: 3}
+    gridSizeX: 3
+    gridSizeY: 8
+    gridOffsetX: 1
+    gridOffsetY: 3
+    canSpawnUnits: 0

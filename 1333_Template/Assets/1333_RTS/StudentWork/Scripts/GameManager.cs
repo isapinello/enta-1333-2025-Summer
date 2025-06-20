@@ -14,10 +14,6 @@ public class GameManager : MonoBehaviour
         gridManager.InitializedGrid();
     }
 
-    private void Start()
-    {
-        unitManager.SpawnDemoUnits(gridManager.GetGrid(), gridManager.GridSettings);
-    }
     public void StartPlacingBuilding(BuildingData buildingData)
     {
         buildingPlacing.BeginPlacing(buildingData);
