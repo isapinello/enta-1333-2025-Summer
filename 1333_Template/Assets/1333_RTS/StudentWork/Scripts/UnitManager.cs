@@ -12,6 +12,8 @@ public class UnitManager : MonoBehaviour
     private List<UnitInstance> allUnits = new();
     public List<UnitInstance> SelectedUnits { get; private set; } = new();
 
+    public List<UnitInstance> GetAllPlayerUnits() => allUnits;
+
     void SpawnUnit(Vector3 position)
     {
         var obj = Instantiate(unitPrefab, position, Quaternion.identity);
