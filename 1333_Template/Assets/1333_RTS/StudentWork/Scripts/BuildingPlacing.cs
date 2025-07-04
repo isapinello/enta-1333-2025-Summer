@@ -6,12 +6,15 @@ public class BuildingPlacing : MonoBehaviour
 {
     [SerializeField] private GridManager gridManager;
     [SerializeField] private UnitManager unitManager;
+    [SerializeField] private GameManager gameManager;
+
     private GameObject previewInstance;
     private BuildingData currentBuilding;
     private bool placing = false;
     private Material[] originalMaterials;
     private Vector3 baseEuler;
     private int rotationIndex = 0;
+    private bool hasPlacedFirstBuilding = false;
 
     public void BeginPlacing(BuildingData buildingData)
     {
@@ -19,8 +22,8 @@ public class BuildingPlacing : MonoBehaviour
         previewInstance = Instantiate(buildingData.buildingPrefabs);
         foreach (var col in previewInstance.GetComponentsInChildren<Collider>())
             col.enabled = false;
-        placing = true;
 
+        placing = true;
         originalMaterials = previewInstance.GetComponentInChildren<Renderer>().materials;
         baseEuler = previewInstance.transform.eulerAngles;
         rotationIndex = 0;
@@ -123,6 +126,12 @@ public class BuildingPlacing : MonoBehaviour
                             currentBuilding.gridSizeX,
                             currentBuilding.gridSizeY
                         );
+
+                        if (!hasPlacedFirstBuilding)
+                        {
+                            gameManager.NotifyFirstBuildingPlaced();
+                            hasPlacedFirstBuilding = true;
+                        }
                     }
 
                     previewInstance = null;
