@@ -21,4 +21,9 @@ public class SelectBuildingButton : MonoBehaviour
             manager.StartPlacingBuilding(_buildingDataForButton);
         });
     }*/
+    [SerializeField] private AudioClip clickSound;
+    public void PlayClickSound()
+    {
+        AudioManager.Instance.PlayButtonSound();
+    }
 }

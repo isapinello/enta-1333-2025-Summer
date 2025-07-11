@@ -194,6 +194,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridManager: {fileID: 1995583409}
   unitManager: {fileID: 2126596901}
+  gameManager: {fileID: 1485569255}
 --- !u!4 &178145573
 Transform:
   m_ObjectHideFlags: 0
@@ -574,11 +575,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2849205713906574319, guid: 910f2e4d0eae3ed449b8aba848123f2f, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.88198
+      value: 0.63012177
       objectReference: {fileID: 0}
     - target: {fileID: 2849205713906574319, guid: 910f2e4d0eae3ed449b8aba848123f2f, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.8473
+      value: 0.622774
       objectReference: {fileID: 0}
     - target: {fileID: 2849205713906574319, guid: 910f2e4d0eae3ed449b8aba848123f2f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -848,6 +849,55 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gridManager: {fileID: 1995583409}
+--- !u!1 &1054049822
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1054049824}
+  - component: {fileID: 1054049823}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1054049823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1054049822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57abe82c88910a849960d0bbeff57772, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonClickSound: {fileID: 8300000, guid: 2e2be1dce84da70408bf3d2c9adf9e76, type: 3}
+  buildingPlaceSound: {fileID: 8300000, guid: 22af77f44a6694e4c86b089abd8d8514, type: 3}
+  unitSelectSound: {fileID: 8300000, guid: e1aae029c5cddf24b956a37645030dac, type: 3}
+  pooledSourcePrefab: {fileID: 6872366465120294704, guid: 360f35ada26caac479f02466155274fa, type: 3}
+  poolSize: 10
+--- !u!4 &1054049824
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1054049822}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 44.974293, y: -74.570816, z: 4.8174105}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1103507016
 GameObject:
   m_ObjectHideFlags: 0
@@ -943,6 +993,54 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1434016546
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1434016548}
+  - component: {fileID: 1434016547}
+  m_Layer: 0
+  m_Name: EnemyManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1434016547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1434016546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 737128562082d3d4b93ac7712696bf7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyUnits: []
+  unitManager: {fileID: 2126596901}
+  playerBuildings: []
+  pathfinder: {fileID: 1016106457}
+--- !u!4 &1434016548
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1434016546}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1485569254
 GameObject:
   m_ObjectHideFlags: 0
@@ -975,6 +1073,8 @@ MonoBehaviour:
   gridManager: {fileID: 1995583409}
   unitManager: {fileID: 2126596901}
   buildingPlacing: {fileID: 178145572}
+  enemyManager: {fileID: 1434016547}
+  enemyPrefab: {fileID: 787140419939267817, guid: 9f146970af130114f8b5ab5a880c6bfe, type: 3}
 --- !u!4 &1485569256
 Transform:
   m_ObjectHideFlags: 0
@@ -1421,8 +1521,6 @@ MonoBehaviour:
   gridSettings: {fileID: 11400000, guid: a999924c2e37427408cc0ee17bc1d6ea, type: 2}
   terrainTypes:
   - {fileID: 11400000, guid: a067ff6d22a0fa24b9c5567cfae19a7d, type: 2}
-  - {fileID: 11400000, guid: 7f2f0a062bff8fe49a87aefcc9dd948c, type: 2}
-  - {fileID: 11400000, guid: 96f54dca82ca0dd40b7e4d935c321bee, type: 2}
   AllNodes:
   - Name: Default_0_0
     WorldPosition: {x: 0, y: 0, z: 0}
@@ -10305,3 +10403,5 @@ SceneRoots:
   - {fileID: 189442023}
   - {fileID: 178145573}
   - {fileID: 402970753}
+  - {fileID: 1434016548}
+  - {fileID: 1054049824}

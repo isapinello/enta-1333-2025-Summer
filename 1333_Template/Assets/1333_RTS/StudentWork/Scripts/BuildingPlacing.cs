@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class BuildingPlacing : MonoBehaviour
 {
@@ -41,6 +42,7 @@ public class BuildingPlacing : MonoBehaviour
                 if (!gridManager.IsValidCoord(gx, gy)) return false;
                 var node = gridManager.GetGrid()[gx, gy];
                 if (!node.walkable || node.IsOccupied) return false;
+                AudioManager.Instance.PlayBuildingPlaceSound();//audio
             }
         }
         return true;

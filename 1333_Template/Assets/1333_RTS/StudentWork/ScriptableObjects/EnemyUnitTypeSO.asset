@@ -15,6 +15,6 @@ MonoBehaviour:
   unitName: Enemy01
   moveSpeed: 2
   attackRange: 1.5
-  health: 50
+  health: 10
   attackDamage: 5
-  enemyMaterial: {fileID: 0}
+  enemyMaterial: {fileID: 2100000, guid: e3265bfeeaddf834faab7a1b76f53070, type: 2}

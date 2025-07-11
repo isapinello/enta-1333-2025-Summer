@@ -129,6 +129,7 @@ public class UnitInstance : UnitBase, ISelectable
 
     public void OnSelect()
     {
+        AudioManager.Instance.PlayUnitSelectSound();//audio
         if (cachedRenderer != null)
             cachedRenderer.material.color = Color.cyan;
     }
