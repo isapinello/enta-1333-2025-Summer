@@ -9,8 +9,40 @@ public class EnemyManager : MonoBehaviour
     [SerializeField] private List<BuildingInstance> playerBuildings;
     [SerializeField] private AStarPathfinding pathfinder;
 
-    private bool active = false;
+    [SerializeField] private GameObject enemyPrefab;
+    [SerializeField] private GridManager gridManager;
 
+    [SerializeField] private float timeBetweenWaves = 30f;
+    [SerializeField] private int enemiesPerWave = 5;
+
+    private int currentWave = 0;
+    private bool wavesActive = false;
+    private bool active = false;
+    public void StartWaves()
+    {
+        if (!wavesActive)
+        {
+            wavesActive = true;
+            StartCoroutine(WaveLoop());
+        }
+    }
+
+    private IEnumerator WaveLoop()
+    {
+        while (wavesActive)
+        {
+            yield return new WaitForSeconds(timeBetweenWaves);
+            SpawnWave();
+        }
+    }
+
+    private void SpawnWave()
+    {
+        currentWave++;
+        Debug.Log($"Spawning wave {currentWave}");
+
+        SpawnRandomEnemies(enemiesPerWave, enemyPrefab, gridManager);
+    }
     public void InitializeEnemyUnits()
     {
         foreach (var unit in enemyUnits)

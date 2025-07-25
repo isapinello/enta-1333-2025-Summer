@@ -20,4 +20,7 @@ public class BuildingData
     public int gridOffsetY = 1;
 
     public bool canSpawnUnits = false;
+
+    [Header("Cost")]
+    public int woodCost = 25;
 }
