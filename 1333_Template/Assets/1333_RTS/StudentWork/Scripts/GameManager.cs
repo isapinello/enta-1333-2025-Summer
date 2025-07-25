@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -33,5 +33,25 @@ public class GameManager : MonoBehaviour
     {
         enemyManager.ActivateEnemyUnits();
         enemyManager.StartWaves(); 
+    }
+    public void OnPlayerUnitKilled()
+    {
+        if (AreAllUnitsDead())
+        {
+            GoToGameOverScreen();
+        }
+    }
+
+    private bool AreAllUnitsDead()
+    {
+        var units = FindObjectsOfType<UnitInstance>();
+        return units.Length == 0;
+    }
+
+    private void GoToGameOverScreen()
+    {
+        // Set a static flag before switching scenes
+        GameOverState.GameLost = true;
+        SceneManager.LoadScene("MainMenu");
     }
 }
