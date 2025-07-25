@@ -87,6 +87,13 @@ public class BuildingPlacing : MonoBehaviour
 
                 if (canPlace && Input.GetMouseButtonDown(0))
                 {
+                    if (!ResourceManager.Instance.CanAfford(currentBuilding.woodCost))
+                    {
+                        Debug.Log("Not enough wood!");
+                        return;
+                    }
+
+                    // Only place if enough wood
                     for (int x = 0; x < currentBuilding.gridSizeX; x++)
                     {
                         for (int y = 0; y < currentBuilding.gridSizeY; y++)
@@ -136,6 +143,7 @@ public class BuildingPlacing : MonoBehaviour
                         }
                     }
 
+                    ResourceManager.Instance.SpendWood(currentBuilding.woodCost);
                     previewInstance = null;
                     placing = false;
                 }

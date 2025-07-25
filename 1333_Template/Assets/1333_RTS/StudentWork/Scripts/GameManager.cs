@@ -32,5 +32,6 @@ public class GameManager : MonoBehaviour
     public void NotifyFirstBuildingPlaced()
     {
         enemyManager.ActivateEnemyUnits();
+        enemyManager.StartWaves(); 
     }
 }
