@@ -42,7 +42,7 @@ public class BuildingPlacing : MonoBehaviour
                 if (!gridManager.IsValidCoord(gx, gy)) return false;
                 var node = gridManager.GetGrid()[gx, gy];
                 if (!node.walkable || node.IsOccupied) return false;
-                AudioManager.Instance.PlayBuildingPlaceSound();//audio
+                AudioManager.Instance.PlayBuildingPlaceSound(); // audio
             }
         }
         return true;
@@ -93,7 +93,8 @@ public class BuildingPlacing : MonoBehaviour
                         return;
                     }
 
-                    // Only place if enough wood
+                    // Track which nodes this building occupies
+                    List<GridNode> occupied = new();
                     for (int x = 0; x < currentBuilding.gridSizeX; x++)
                     {
                         for (int y = 0; y < currentBuilding.gridSizeY; y++)
@@ -104,10 +105,12 @@ public class BuildingPlacing : MonoBehaviour
                             var n = gridManager.GetGrid()[gx, gy];
                             n.IsOccupied = true;
                             n.walkable = false;
+                            occupied.Add(n);
                         }
                     }
 
                     previewInstance.transform.position = gridPos + new Vector3(0, 0.5f, 0);
+
                     foreach (var col in previewInstance.GetComponentsInChildren<Collider>())
                         col.enabled = true;
 
@@ -144,6 +147,11 @@ public class BuildingPlacing : MonoBehaviour
                     }
 
                     ResourceManager.Instance.SpendWood(currentBuilding.woodCost);
+
+                    // Add durability and assign occupied tiles
+                    var durability = previewInstance.AddComponent<Durability>();
+                    durability.Setup(gridManager, occupied);
+
                     previewInstance = null;
                     placing = false;
                 }

@@ -1065,7 +1065,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonClickSound: {fileID: 8300000, guid: 2e2be1dce84da70408bf3d2c9adf9e76, type: 3}
-  buildingPlaceSound: {fileID: 8300000, guid: 22af77f44a6694e4c86b089abd8d8514, type: 3}
+  buildingPlaceSound: {fileID: 8300000, guid: 2e2be1dce84da70408bf3d2c9adf9e76, type: 3}
   unitSelectSound: {fileID: 8300000, guid: e1aae029c5cddf24b956a37645030dac, type: 3}
   backgroundMusic: {fileID: 8300000, guid: ccc4aa5f92a66b94bbd1f95ee4fd31b8, type: 3}
   pooledSourcePrefab: {fileID: 6872366465120294704, guid: 360f35ada26caac479f02466155274fa, type: 3}
