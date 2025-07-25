@@ -8,14 +8,24 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private GameObject[] Layout;
     private enum MenuLayouts
     {
-        Main = 0,
-        Logo = 1,
-        Controls = 2
+            Main = 0,
+            Logo = 1,
+            Controls = 2,
+            GameOver = 3
     }
     private void Start()
     {
-        OpenLogo();
         Cursor.visible = true;
+
+        if (GameOverState.GameLost)
+        {
+            SetLayout(MenuLayouts.GameOver);
+            GameOverState.GameLost = false; // Reset it for next time
+        }
+        else
+        {
+            OpenLogo();
+        }
     }
     private void SetLayout(MenuLayouts layout)
     {
@@ -44,5 +54,9 @@ public class MenuManager : MonoBehaviour
     public void ButtonEndGame()
     {
         Application.Quit();
+    }
+    public void ButtonRetryGame()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Game");
     }
 }
