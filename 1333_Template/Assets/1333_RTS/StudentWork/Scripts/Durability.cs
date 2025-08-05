@@ -6,7 +6,7 @@ public class Durability : MonoBehaviour
 {
     [SerializeField] private int durability = 100;
     [SerializeField] private int decayAmount = 10;
-    [SerializeField] private float decayInterval = 10f;
+    [SerializeField] private float decayInterval = 5f;
 
     private GridManager gridManager;
     private List<GridNode> occupiedNodes = new();

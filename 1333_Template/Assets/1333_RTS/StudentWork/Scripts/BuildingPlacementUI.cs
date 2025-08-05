@@ -7,7 +7,7 @@ using TMPro;
 public class BuildingPlacementUI : MonoBehaviour
 {
     [SerializeField] private RectTransform LayoutGroupParent;
-    [SerializeField] private Button ButtonPrefab;
+    [SerializeField] private SelectBuildingButton ButtonPrefab;
     [SerializeField] private BuildingTypeSo BuildingData;
     [SerializeField] private GameManager gameManager;
 
@@ -21,13 +21,8 @@ public class BuildingPlacementUI : MonoBehaviour
                 continue;
             }
 
-            BuildingData localData = t; // Fix lambda capture issue
-
-            Button button = Instantiate(ButtonPrefab, LayoutGroupParent).GetComponent<Button>();
-            TMP_Text label = button.GetComponentInChildren<TMP_Text>();
-            if (label != null) label.text = localData.BuildingId;
-
-            button.onClick.AddListener(() => gameManager.StartPlacingBuilding(localData));
+            SelectBuildingButton button = Instantiate(ButtonPrefab, LayoutGroupParent);
+            button.Setup(t, gameManager);
         }
     }
 }

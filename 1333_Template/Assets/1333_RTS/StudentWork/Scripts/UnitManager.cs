@@ -8,6 +8,7 @@ public class UnitManager : MonoBehaviour
     [SerializeField] private AStarPathfinding pathfinder;
     [SerializeField] private UnitType unitType;
     [SerializeField] private GridManager gridManager;
+    [SerializeField] private GameObject healthBarPrefab;
 
     private List<UnitInstance> allUnits = new();
     public List<UnitInstance> SelectedUnits { get; private set; } = new();
@@ -19,6 +20,11 @@ public class UnitManager : MonoBehaviour
         var obj = Instantiate(unitPrefab, position, Quaternion.identity);
         var unit = obj.GetComponent<UnitInstance>();
         unit.Initialize(pathfinder, unitType);
+        var damageable = obj.GetComponent<Damageable>();
+        if (damageable != null)
+        {
+            damageable.SetHealthBarPrefab(healthBarPrefab);
+        }
         allUnits.Add(unit);
     }
 
