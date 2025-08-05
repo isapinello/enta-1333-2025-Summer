@@ -236,19 +236,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2793260745308820202}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5437640947271534940}
-        m_TargetAssemblyTypeName: SelectBuildingButton, Assembly-CSharp
-        m_MethodName: PlayClickSound
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &5437640947271534940
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -261,6 +249,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 882928f3342f3bd468c83ca3a3c6922a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _buttonText: {fileID: 4113785159901001688}
+  _button: {fileID: 6390197451114325881}
+  clickSound: {fileID: 8300000, guid: 2e2be1dce84da70408bf3d2c9adf9e76, type: 3}
 --- !u!1 &5129858771501537642
 GameObject:
   m_ObjectHideFlags: 0

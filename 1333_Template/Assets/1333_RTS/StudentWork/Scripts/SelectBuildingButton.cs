@@ -6,24 +6,21 @@ using UnityEngine.UI;
 
 public class SelectBuildingButton : MonoBehaviour
 {
-    /*[SerializeField] private Image _buttonImage;
     [SerializeField] private TMP_Text _buttonText;
     [SerializeField] private Button _button;
+    [SerializeField] private AudioClip clickSound;
 
-    private BuildingData _buildingDataForButton;
-    public void Setup(BuildingData buildingData)
+    private BuildingData _buildingData;
+
+    public void Setup(BuildingData buildingData, GameManager manager)
     {
-        _buildingDataForButton = buildingData;
-        _buttonText.text = _buildingDataForButton.BuildingId;
+        _buildingData = buildingData;
+        _buttonText.text = _buildingData.BuildingId;
 
         _button.onClick.AddListener(() =>
         {
-            manager.StartPlacingBuilding(_buildingDataForButton);
+            manager.StartPlacingBuilding(_buildingData);
+            AudioManager.Instance.PlayButtonSound();
         });
-    }*/
-    [SerializeField] private AudioClip clickSound;
-    public void PlayClickSound()
-    {
-        AudioManager.Instance.PlayButtonSound();
     }
 }

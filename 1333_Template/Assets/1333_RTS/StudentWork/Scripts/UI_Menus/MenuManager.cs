@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour
@@ -20,7 +21,7 @@ public class MenuManager : MonoBehaviour
         if (GameOverState.GameLost)
         {
             SetLayout(MenuLayouts.GameOver);
-            GameOverState.GameLost = false; // Reset it for next time
+            GameOverState.GameLost = false;
         }
         else
         {
@@ -48,15 +49,15 @@ public class MenuManager : MonoBehaviour
     }
     public void ButtonStartGame()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Game");
+        LoadingManager.instance.SwitchToScene("Game");
     }
-
+    
     public void ButtonEndGame()
     {
         Application.Quit();
     }
     public void ButtonRetryGame()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Game");
+        LoadingManager.instance.SwitchToScene("Game");
     }
 }
