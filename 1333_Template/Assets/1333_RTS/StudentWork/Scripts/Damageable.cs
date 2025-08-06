@@ -7,48 +7,27 @@ public class Damageable : MonoBehaviour
     [SerializeField] private int maxHealth = 100;
     private int currentHealth;
 
-    private GameObject healthBarPrefab;
-    private HealthBar healthBar;
+    private HealthBar bar;
 
-    public void SetHealthBarPrefab(GameObject prefab)
-    {
-        healthBarPrefab = prefab;
-    }
-
-    private void Start()
+    private void Awake()
     {
         currentHealth = maxHealth;
-
-        if (healthBarPrefab != null)
-        {
-            GameObject hb = Instantiate(healthBarPrefab, transform.position, Quaternion.identity);
-            healthBar = hb.GetComponent<HealthBar>();
-            healthBar.AttachTo(transform);
-            UpdateHealthBar();
-        }
+        bar = GetComponentInChildren<HealthBar>(true); // search children
+        UpdateBar();
     }
 
-    public void TakeDamage(int amount)
+    public void TakeDamage(int amt)
     {
-        currentHealth -= amount;
-        if (currentHealth < 0) currentHealth = 0;
-
-        UpdateHealthBar();
+        currentHealth = Mathf.Max(0, currentHealth - amt);
+        UpdateBar();
 
         if (currentHealth <= 0)
-        {
-            if (healthBar != null)
-                Destroy(healthBar.gameObject);
-            Destroy(gameObject);
-        }
+            Destroy(gameObject);          // bar dies with its parent
     }
 
-    private void UpdateHealthBar()
+    private void UpdateBar()
     {
-        if (healthBar != null)
-        {
-            float normalizedHealth = (float)currentHealth / maxHealth;
-            healthBar.SetValue(normalizedHealth);
-        }
+        if (bar != null)
+            bar.SetRatio((float)currentHealth / maxHealth);
     }
 }

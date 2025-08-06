@@ -8,27 +8,35 @@ public class UnitManager : MonoBehaviour
     [SerializeField] private AStarPathfinding pathfinder;
     [SerializeField] private UnitType unitType;
     [SerializeField] private GridManager gridManager;
-    [SerializeField] private GameObject healthBarPrefab;
 
-    private List<UnitInstance> allUnits = new();
+    private readonly List<UnitInstance> allUnits = new();
     public List<UnitInstance> SelectedUnits { get; private set; } = new();
 
+    // -------------------------------------------------------------------------
+    // Public helpers
+    // -------------------------------------------------------------------------
     public List<UnitInstance> GetAllPlayerUnits() => allUnits;
 
-    void SpawnUnit(Vector3 position)
+    // -------------------------------------------------------------------------
+    // Spawning
+    // -------------------------------------------------------------------------
+    private void SpawnUnit(Vector3 position)
     {
-        var obj = Instantiate(unitPrefab, position, Quaternion.identity);
-        var unit = obj.GetComponent<UnitInstance>();
+        GameObject obj = Instantiate(unitPrefab, position, Quaternion.identity);
+        UnitInstance unit = obj.GetComponent<UnitInstance>();
+
         unit.Initialize(pathfinder, unitType);
-        var damageable = obj.GetComponent<Damageable>();
-        if (damageable != null)
-        {
-            damageable.SetHealthBarPrefab(healthBarPrefab);
-        }
         allUnits.Add(unit);
     }
 
-    public void SpawnUnitsNear(Vector3 bottomLeftPos, int count, int buildingSizeX, int buildingSizeY)
+    /// <summary>
+    /// Spawns <paramref name="count"/> units around the given building footprint.
+    /// </summary>
+    public void SpawnUnitsNear(
+        Vector3 bottomLeftPos,
+        int count,
+        int buildingSizeX,
+        int buildingSizeY)
     {
         GridNode[,] grid = gridManager.GetGrid();
         GridNode originNode = gridManager.GetNodeFromWorldPosition(bottomLeftPos);
@@ -43,7 +51,6 @@ public class UnitManager : MonoBehaviour
         for (int r = 0; r <= maxSearchRadius && spawned < count; r++)
         {
             for (int dx = -r; dx <= r; dx++)
-            {
                 for (int dy = -r; dy <= r; dy++)
                 {
                     int x = startX + dx;
@@ -61,16 +68,15 @@ public class UnitManager : MonoBehaviour
                         }
                     }
                 }
-            }
         }
     }
 
+    // -------------------------------------------------------------------------
+    // Selection
+    // -------------------------------------------------------------------------
     public void SelectUnit(UnitInstance unit, bool additive)
     {
-        if (!additive)
-        {
-            DeselectAll();
-        }
+        if (!additive) DeselectAll();
 
         if (!SelectedUnits.Contains(unit))
         {
@@ -81,10 +87,7 @@ public class UnitManager : MonoBehaviour
 
     public void DeselectAll()
     {
-        foreach (var unit in SelectedUnits)
-        {
-            unit.OnDeselect();
-        }
+        foreach (var unit in SelectedUnits) unit.OnDeselect();
         SelectedUnits.Clear();
     }
 }
