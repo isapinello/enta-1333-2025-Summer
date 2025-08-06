@@ -5,27 +5,27 @@ using UnityEngine.UI;
 
 public class HealthBar : MonoBehaviour
 {
-    [SerializeField] private Slider _slider;
-    [SerializeField] private Vector3 _offset = new Vector3(0, 2, 0);
+    [SerializeField] private Image _fill = null;
 
-    private Transform _target;
+    private Camera _cam;
 
-    public void AttachTo(Transform target)
+    private void Awake()
     {
-        _target = target;
+        _cam = Camera.main;
     }
 
-    public void SetValue(float value)
-    {
-        _slider.value = value;
-    }
-
+    // See camera
     private void LateUpdate()
     {
-        if (_target != null)
-        {
-            transform.position = _target.position + _offset;
-            transform.forward = Camera.main.transform.forward;
-        }
+        transform.rotation = Quaternion.LookRotation(
+            transform.position - _cam.transform.position, Vector3.up);
+    }
+
+    public void SetRatio(float r)
+    {
+        if (_fill == null) return;
+
+        _fill.fillAmount = Mathf.Clamp01(r);
+        _fill.color = Color.Lerp(Color.red, Color.green, _fill.fillAmount);
     }
 }

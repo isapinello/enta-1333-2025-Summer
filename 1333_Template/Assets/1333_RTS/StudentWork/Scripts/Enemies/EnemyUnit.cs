@@ -10,27 +10,18 @@ public class EnemyUnit : MonoBehaviour
     [SerializeField] private int damage = 10;
 
     private AStarPathfinding pathfinder;
-    private bool active = false;
-    private Coroutine behaviorRoutine;
     private List<GridNode> _currentPath = new();
     private int _pathIndex = 0;
     private GameObject currentTarget;
-    private Damageable damageable;
-    private void Awake()
-    {
-        damageable = GetComponent<Damageable>();
-        if (damageable == null)
-            damageable = gameObject.AddComponent<Damageable>();
-    }
-    public void SetPathfinder(AStarPathfinding p)
-    {
-        pathfinder = p;
-    }
+    private Coroutine behaviorRoutine;
+    private bool active = false;
 
-    public void SetActive(bool state)
-    {
-        active = state;
-    }
+    private Damageable damageable;   // just a reference
+
+    private void Awake() => damageable = GetComponent<Damageable>();
+
+    public void SetPathfinder(AStarPathfinding p) => pathfinder = p;
+    public void SetActive(bool state) => active = state;
 
     public void StartBehavior()
     {
@@ -45,46 +36,40 @@ public class EnemyUnit : MonoBehaviour
             GameObject target = FindClosestTarget();
             if (target != null)
             {
-                float distance = Vector3.Distance(transform.position, target.transform.position);
+                float dist = Vector3.Distance(transform.position, target.transform.position);
 
-                // Only reassign path if new target or done moving
                 if (target != currentTarget || _pathIndex >= _currentPath.Count)
                 {
                     currentTarget = target;
                     SetTarget(currentTarget.transform.position);
                 }
 
-                if (distance <= attackRange)
+                if (dist <= attackRange)
                 {
                     target.GetComponent<Damageable>()?.TakeDamage(damage);
                     yield return new WaitForSeconds(attackCooldown);
                 }
             }
-
             yield return null;
         }
     }
 
-    void SetTarget(Vector3 targetPos)
+    void SetTarget(Vector3 pos)
     {
-        _currentPath = pathfinder.FindPath(transform.position, targetPos, 1, 1);
+        _currentPath = pathfinder.FindPath(transform.position, pos, 1, 1);
         _pathIndex = 0;
     }
 
     private void Update()
     {
-        if (!active || _currentPath == null || _currentPath.Count == 0 || _pathIndex >= _currentPath.Count)
-            return;
+        if (!active || _currentPath == null || _pathIndex >= _currentPath.Count) return;
 
-        Vector3 nextWaypoint = _currentPath[_pathIndex].WorldPosition;
-        float step = speed * Time.deltaTime;
-        transform.position = Vector3.MoveTowards(transform.position, nextWaypoint, step);
+        Vector3 next = _currentPath[_pathIndex].WorldPosition;
+        transform.position = Vector3.MoveTowards(transform.position, next, speed * Time.deltaTime);
 
-        if (Vector3.Distance(transform.position, nextWaypoint) < 0.05f)
-        {
-            _pathIndex++;
-        }
+        if (Vector3.Distance(transform.position, next) < 0.05f) _pathIndex++;
     }
+
 
     GameObject FindClosestTarget()
     {
