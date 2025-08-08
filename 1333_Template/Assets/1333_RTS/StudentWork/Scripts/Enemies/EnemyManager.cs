@@ -15,7 +15,7 @@ public class EnemyManager : MonoBehaviour
     [SerializeField] private float timeBetweenWaves = 30f;
     [SerializeField] private int enemiesPerWave = 5;
 
-    [SerializeField] private GameObject healthBarPrefab;
+    //[SerializeField] private GameObject healthBarPrefab;
 
     private int currentWave = 0;
     private bool wavesActive = false;

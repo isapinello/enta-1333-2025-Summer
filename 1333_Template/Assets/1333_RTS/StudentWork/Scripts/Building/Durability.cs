@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Durability : MonoBehaviour
 {
-    [SerializeField] private int durability = 100;
+    [SerializeField] private int durability = 60;
     [SerializeField] private int decayAmount = 10;
     [SerializeField] private float decayInterval = 5f;
 

@@ -11,6 +11,7 @@ public class UnitInstance : UnitBase, ISelectable
     private List<GridNode> _currentPath = new();
     private int _pathIndex = 0;
     private bool _isMoving = false;
+
     private float attackRange = 1.5f;
     private float attackCooldown = 1.0f;
     private int damage = 20;
@@ -20,31 +21,45 @@ public class UnitInstance : UnitBase, ISelectable
     private Renderer cachedRenderer;
     private Coroutine behaviorRoutine;
 
-    private void Start() => StartBehavior();
+    // --- NEW: owner reference so we can notify the manager on death ---
+    private UnitManager _ownerManager;
+    public void SetOwner(UnitManager owner) => _ownerManager = owner;
 
-    public void Initialize(AStarPathfinding pf, UnitType type)
+    public bool IsMoving => _isMoving;
+
+    private void Start()
     {
-        _pathfinder = pf;
-        moveSpeed = type.moveSpeed;
-        attackRange = type.attackRange;
-        damage = Mathf.RoundToInt(type.attackDamage);
+        StartBehavior(); // no Damageable add here
+    }
+
+    public void Initialize(AStarPathfinding pathfinder, UnitType unitType)
+    {
+        _pathfinder = pathfinder;
+        moveSpeed = unitType.moveSpeed;
+        attackRange = unitType.attackRange;
+        damage = Mathf.RoundToInt(unitType.attackDamage);
         cachedRenderer = GetComponentInChildren<Renderer>();
 
         if (cachedRenderer != null)
-            cachedRenderer.material = type.teamMaterial;
+            cachedRenderer.material = unitType.teamMaterial;
     }
 
     private void Update()
     {
-        if (_currentPath == null || _pathIndex >= _currentPath.Count) return;
+        if (_currentPath == null || _currentPath.Count == 0 || _pathIndex >= _currentPath.Count)
+            return;
 
-        Vector3 next = _currentPath[_pathIndex].WorldPosition;
-        transform.position = Vector3.MoveTowards(transform.position, next, moveSpeed * Time.deltaTime);
+        Vector3 nextWaypoint = _currentPath[_pathIndex].WorldPosition;
+        float step = moveSpeed * Time.deltaTime;
+        transform.position = Vector3.MoveTowards(transform.position, nextWaypoint, step);
 
-        if (Vector3.Distance(transform.position, next) < 0.05f)
+        if (Vector3.Distance(transform.position, nextWaypoint) < 0.05f)
         {
             _pathIndex++;
-            if (_pathIndex >= _currentPath.Count) _isMoving = false;
+            if (_pathIndex >= _currentPath.Count)
+            {
+                _isMoving = false;
+            }
         }
     }
 
@@ -76,6 +91,7 @@ public class UnitInstance : UnitBase, ISelectable
                     yield return new WaitForSeconds(attackCooldown);
                 }
             }
+
             yield return null;
         }
     }
@@ -131,5 +147,9 @@ public class UnitInstance : UnitBase, ISelectable
         }
 
         return closest;
+    }
+    private void OnDestroy()
+    {
+        _ownerManager?.OnUnitDestroyed(this);
     }
 }

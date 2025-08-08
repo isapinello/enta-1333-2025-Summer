@@ -6,6 +6,7 @@ public class Damageable : MonoBehaviour
 {
     [SerializeField] private int maxHealth = 100;
     private int currentHealth;
+    private bool isDead;
 
     private HealthBar bar;
 
@@ -16,13 +17,18 @@ public class Damageable : MonoBehaviour
         UpdateBar();
     }
 
-    public void TakeDamage(int amt)
+    public void TakeDamage(int amount)
     {
-        currentHealth = Mathf.Max(0, currentHealth - amt);
+        if (isDead) return;
+
+        currentHealth = Mathf.Max(0, currentHealth - amount);
         UpdateBar();
 
         if (currentHealth <= 0)
-            Destroy(gameObject);          // bar dies with its parent
+        {
+            isDead = true;
+            Destroy(gameObject); // UnitManager gets notified via UnitInstance.OnDestroy()
+        }
     }
 
     private void UpdateBar()
